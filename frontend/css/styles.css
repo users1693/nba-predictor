@@ -1,0 +1,350 @@
+/* ============================================
+   CSS RESET & BASE STYLES
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  color: #333;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 30px 0;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  color: #2d3748;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #718096;
+  font-size: 1.1rem;
+}
+
+/* ============================================
+   LOADING STATE
+   ============================================ */
+
+.loading {
+  text-align: center;
+  padding: 60px 20px;
+  color: white;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ============================================
+   ERROR & NO GAMES STATES
+   ============================================ */
+
+.error-message,
+.no-games {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.error-message p {
+  font-size: 1.2rem;
+  color: #e53e3e;
+  margin-bottom: 20px;
+}
+
+.no-games p {
+  font-size: 1.2rem;
+  color: #4a5568;
+}
+
+.hint {
+  color: #718096;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}
+
+.retry-btn {
+  background: #667eea;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.retry-btn:hover {
+  background: #5568d3;
+}
+
+/* ============================================
+   PREDICTIONS GRID
+   ============================================ */
+
+.predictions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  padding: 20px 0;
+}
+
+/* ============================================
+   GAME CARD
+   ============================================ */
+
+.game-card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.game-header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+.game-time {
+  color: #718096;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.game-title {
+  font-size: 1.1rem;
+  color: #2d3748;
+  font-weight: 600;
+}
+
+/* ============================================
+   TEAM DISPLAY
+   ============================================ */
+
+.team {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  background: #f7fafc;
+}
+
+.team-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
+.team-info {
+  flex: 1;
+}
+
+.team-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #2d3748;
+  margin-bottom: 5px;
+}
+
+.team-stats {
+  font-size: 0.85rem;
+  color: #718096;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.predictor-score {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #667eea;
+}
+
+/* ============================================
+   VS DIVIDER
+   ============================================ */
+
+.vs-divider {
+  text-align: center;
+  margin: 15px 0;
+  position: relative;
+}
+
+.vs-divider::before,
+.vs-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 40%;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.vs-divider::before {
+  left: 0;
+}
+
+.vs-divider::after {
+  right: 0;
+}
+
+.vs-text {
+  background: white;
+  padding: 0 15px;
+  color: #a0aec0;
+  font-weight: 600;
+  position: relative;
+}
+
+/* ============================================
+   PREDICTION RESULT
+   ============================================ */
+
+.prediction-result {
+  margin-top: 20px;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+}
+
+.winner {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.winner-icon {
+  font-size: 1.5rem;
+  margin-right: 8px;
+}
+
+.confidence-label {
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+  opacity: 0.9;
+}
+
+.confidence-bar {
+  background: rgba(255, 255, 255, 0.3);
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+
+.confidence-fill {
+  height: 100%;
+  background: white;
+  border-radius: 5px;
+  transition: width 1s ease-out;
+}
+
+.confidence-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.score-diff {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin-top: 5px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 30px 0;
+  text-align: center;
+  margin-top: 60px;
+  color: #718096;
+}
+
+.footer .small {
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .predictions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-stats {
+    font-size: 0.8rem;
+  }
+}

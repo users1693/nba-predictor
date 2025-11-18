@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NBA Game Predictor</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <h1>🏀 NBA Game Predictor</h1>
+        <p class="subtitle">
+          AI-powered predictions based on season statistics
+        </p>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+      <!-- Loading State -->
+      <div id="loading" class="loading">
+        <div class="spinner"></div>
+        <p>Loading predictions...</p>
+      </div>
+
+      <!-- Error State -->
+      <div id="error" class="error-message" style="display: none">
+        <p>❌ <span id="error-text"></span></p>
+        <button onclick="loadPredictions()" class="retry-btn">Retry</button>
+      </div>
+
+      <!-- No Games State -->
+      <div id="no-games" class="no-games" style="display: none">
+        <p>📅 No scheduled games found for today.</p>
+        <p class="hint">
+          Games may have already started or there might be no games scheduled.
+        </p>
+      </div>
+
+      <!-- Predictions Container -->
+      <div
+        id="predictions-container"
+        class="predictions-grid"
+        style="display: none"
+      >
+        <!-- Game cards will be inserted here by JavaScript -->
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>Built with ❤️ using ESPN data | For educational purposes only</p>
+        <p class="small">
+          Predictions are based on statistical analysis and do not guarantee
+          outcomes
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
