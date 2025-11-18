@@ -1,5 +1,5 @@
 // API Configuration
-const API_URL = "http://127.0.0.1:8000"; // Local development
+const API_URL = "https://nba-predictor-bisc.onrender.com"; // Local development
 // const API_URL = 'https://your-app.onrender.com';  // Production (we'll change this later)
 
 // DOM Elements
